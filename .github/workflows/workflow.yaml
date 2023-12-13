@@ -14,7 +14,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Write Some File
+        run: echo "Some Content" > some-file.txt
+      - name: Cache File
+        uses: actions/cache/save@v3
+        with:
+          path: some-file.txt
+          key: some-file
+
       - name: Run Action 1
         uses: ./.github/actions/action-1
-      - name: Run Action 2
-        uses: ./.github/actions/action-2
+        with:
+          cache-key: some-file

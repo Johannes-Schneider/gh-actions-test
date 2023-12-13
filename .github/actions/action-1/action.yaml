@@ -1,9 +1,22 @@
 name: "Action 1"
 description: "This is action 1"
 
+inputs:
+  cache-key:
+    description: "Cache Key"
+    required: true
+
 runs:
   using: "composite"
   steps:
     - name: Print Hello
       run: echo "Hello from Action 1"
+      shell: bash
+    - name: Restore Cached File
+      uses: actions/cache@v3
+      with:
+        path: some-file.txt
+        key: ${{ inputs.cache-key }}
+    - name: Print Cached File
+      run: cat some-file.txt
       shell: bash
