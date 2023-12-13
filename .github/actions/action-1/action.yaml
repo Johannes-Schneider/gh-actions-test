@@ -2,5 +2,7 @@ name: "Action 1"
 description: "This is action 1"
 
 runs:
-  - name: Print Hello
-    command: echo "Hello from Action 1"
+  using: "composite"
+  steps:
+    - name: Print Hello
+      run: echo "Hello from Action 1"
