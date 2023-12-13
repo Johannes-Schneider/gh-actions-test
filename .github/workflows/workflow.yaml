@@ -27,3 +27,6 @@ jobs:
         uses: ./.github/actions/action-1
         with:
           cache-key: some-file
+
+      - name: Run Action 2
+        uses: ./.github/actions/action-2

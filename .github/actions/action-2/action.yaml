@@ -1,9 +1,10 @@
 name: "Action 2"
 description: "This is action 2"
 
-runs:
-  using: "composite"
-  steps:
+jobs:
+  action1-job:
+    runs-on: ubuntu-latest
+    steps:
     - name: Print Hello
       run: echo "Hello from Action 2"
       shell: bash
