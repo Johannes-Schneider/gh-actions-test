@@ -1,0 +1,6 @@
+name: "Action 2"
+description: "This is action 2"
+
+runs:
+  - name: Print Hello
+    command: echo "Hello from Action 2"

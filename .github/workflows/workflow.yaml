@@ -1,0 +1,20 @@
+name: Some Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Some Input'
+        required: false
+        default: ''
+
+jobs:
+  some-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run Action 1
+        uses: ./.github/actions/action-1
+      - name: Run Action 2
+        uses: ./.github/actions/action-2
